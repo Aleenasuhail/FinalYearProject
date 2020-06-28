@@ -1,0 +1,62 @@
+#pip install nltk (in jupyternotebook)
+import nltk
+import io #read through the file
+import numpy as np
+import string
+
+f=open('Desktop/chtbot.txt','r',errors = 'ignore')
+raw=f.read()
+raw=raw.lower() #converts string to lower case
+nltk.download('punkt')#for sentence tokenization 
+nltk.download('wordnet')#nltk dictionary 
+sent_tokens = nltk.sent_tokenize(raw) #converts to list of sentences
+word_tokens = nltk.word_tokenize(raw)#to list of words
+
+
+lemmer = nltk.stem.WordNetLemmatizer() #checks the root word in ntlk dictionary 
+def LemTokens(tokens):
+    return [lemmer.lemmatize(token) for token in tokens] #returns normalised tokens
+remove_punct_dict= dict((ord(punct),None) for punct in string.punctuation)
+def LemNormalize(text): #text=user query
+    return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))#passing user question
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer  #words to matrix form
+from sklearn.metrics.pairwise import cosine_similarity #matches user question to data
+
+
+    def response(user_response):
+        chatbot_response='' #initially null
+        sent_tokens.append(user_response)
+        TfidfVec = TfidfVectorizer(tokenizer= LemNormalize, stop_words='english')
+        tfidf= TfidfVec.fit_transform(sent_tokens) #transform sent_tokens to vector form
+        vals = cosine_similarity(tfidf[-1], tfidf) #tfidf[-1] sent_tokens and tfidf is user question 
+        idx=vals.argsort()[0][-2]
+        flat= vals.flatten() #convert to row matrix
+        flat.sort
+        req_tfidf = flat[-2]
+        if(req_tfidf==0):
+            chatbot_response=chatbot_response +"I am not queit sure about that"
+            return chatbot_response
+        else:
+            chatbot_response= chatbot_response+sent_tokens[idx]
+            return chatbot_response
+
+
+
+            flag=True
+          print("Hi I am DeMon, welcome to De Montfort University how can I help you today")
+          while(flag==True):
+              user_response = input()
+              user_response= user_response.lower()
+              if(user_response!="bye"):
+                  if(user_response=='thanks' or user_response=='thank you' ):
+                      flag=False
+                      print("glad I could help")
+                  else:
+                      print("chatbot: ",end="")
+                      print(response(user_response))
+                      sent_tokens.remove(user_response)
+              else:
+                  flag=False
+                  print("chatbot:Bye!")
