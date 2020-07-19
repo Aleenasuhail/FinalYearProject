@@ -4,7 +4,7 @@ import json
 
 import torch
 
-from model import NeuralNet
+from model import NeuralNetwork
 from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -22,14 +22,14 @@ all_words = data['all_words']
 tags = data['tags']
 model_state = data["model_state"]
 
-model = NeuralNet(input_size, hidden_size, output_size).to(device)
+model = NeuralNetwork(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Sam"
-print("Let's chat! (type 'quit' to exit)")
+robot_name = "DeMon"
+print("Welcome to De Montfort University! (type 'quit' to exit)")
 while True:
-    # sentence = "do you use credit cards?"
+    
     sentence = input("You: ")
     if sentence == "quit":
         break
@@ -46,9 +46,9 @@ while True:
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
+    if prob.item() > 0.90:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                print(f"{robot_name}: {random.choice(intent['responses'])}")
     else:
-        print(f"{bot_name}: I do not understand...")
+        print(f"{robot_name}: I am sorry I do not understand...")
