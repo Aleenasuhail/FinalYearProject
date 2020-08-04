@@ -1,27 +1,39 @@
 {"intents":[
   {"tag": "greeting",
-  "patterns": ["HI", "Hello","you alright","Is anyone there"],
+  "patterns": ["HI", "Hello","Is anyone there","hey"],
   "responses": ["Hello","Hi. I am DeMon", "Hi! Here to help","Welcome How can I help you","Welcome to De Montfort University"]
+},
+  {"tag": "howareyou",
+  "patterns": ["HI how are you", "Hello you alright","you alright","how are you","how are you doing"],
+  "responses": ["Hello I am wonderful as always","Hi. I am alright, thanks How are you", "Hi! i am okay how about yourself","i am fine thanks, how are you"]
 },
   {"tag": "Bye",
   "patterns": ["Bye", "Thanks for your help","Have a good day","Have a good day"],
   "responses": ["Take care","Have a nice day", "Glad I could help","See you soon"]
 },
   {"tag": "details",
-  "patterns": ["who are you", "whats your name?","Who do you work for","Are you a    human"],
-  "responses": ["I am DeMon Your Virtual assistant"]
+  "patterns": ["who are you", "whats your name?","Who do you work for","Are you a human"],
+  "responses": ["I am DeMon Your Virtual assistant how can i help", "I am DeMon I work for DMU how can i assist you"]
+},
+  {"tag": "responsegood",
+  "patterns": ["i am fine", "i am good?","i am not too bad","i am alright thanks for asking","i am okay"],
+  "responses": ["aweseome, how can i assist you today", "alright how can i help "]
+},
+{"tag": "responsebad",
+"patterns": ["i am not well", "i am not okay?"],
+"responses": ["sorry to hear that how can i help", "dont worry you will be okay :) how can i help"]
 },
   {"tag": "Student ID",
-  "patterns": ["What is my Student ID", "when do i get my student                 id","StudentID"],
-  "responses": ["your StudentID is the letter p followed by your student number   (e.g.p1234567)", "your ID will be given to you as part of your registration process","Welcome to De Montfort University","Refer to your Induction schedule to find out exactly when and where you should go."]
+  "patterns": ["What is my Student ID", "when do i get my student id","StudentID"],
+  "responses": ["your StudentID is the letter p followed by your student number   (e.g.p1234567). Hope this answers your query", "your ID will be given to you as part of your registration process.Hope this answers your query","Welcome to De Montfort University,Refer to your Induction schedule to find out exactly when and where you should go.Hope this answers your query"]
 },
   {"tag": "timetable",
   "patterns": ["where can i find my timetable", "when will i get my  timetable","timetable","what is my timetable"],
-  "responses": ["click on the link https://my.dmu.ac.uk/campusm/home#menu for timetable", "Visit MyDMU website and then click on timetable tile"]
+  "responses": ["click on the link https://my.dmu.ac.uk/campusm/home#menu for timetable.Hope this answers your query", "Visit MyDMU website and then click on timetable tile,Hope this answers your query"]
 },
   {"tag": "password",
-  "patterns": ["what is my password?", "reset password","password"],
-  "responses": ["click on the link https://sspr.dmu.ac.uk/sspr/public/"]
+  "patterns": ["what is my password?", "reset password","password","can you help me reset my password"],
+  "responses": [" Please click on the link https://sspr.dmu.ac.uk/sspr/public/ to reset password", "sure I can help you reset you password just click on this link https://sspr.dmu.ac.uk/sspr/public/"]
 },
   {"tag": "wifi",
   "patterns": ["what is the wifi password", "how to connect to wifi","university wifi details","wifi not connecting"],
@@ -29,11 +41,11 @@
 },
  {"tag": "studentloan",
  "patterns": ["how can i get student loan", "how do i get student finance","Who deals with funding courses and student loans"],
- "responses": ["Please contact student finance welfare team ", "student finance welfare team can be reached on +44 (0)116 2577595 between monday to Friday 10 am and 4pm", "email student finance welfare team sas@dmu.ac.uk","to get information regarding student finance drop us an email sas@dmu.ac.uk or ring 0116 2577595"]
+ "responses": ["student finance welfare team can be reached on +44 (0)116 2577595 between monday to Friday 10 am and 4pm", "email student finance welfare team sas@dmu.ac.uk","to get information regarding student finance drop us an email sas@dmu.ac.uk or ring 0116 2577595"]
 },
  {"tag": "Accomodation",
- "patterns": ["How to book an accomodation ?", "when can i book accomodation","accomodation help"],
- "responses": ["Please refer to FAQs to find the answer to your query https://www.dmu.ac.uk/study/accommodation/faqs.aspx", "drop accomodatio office an email accommodation@dmu.ac.uk", "here is the list of university accomodation https://www.dmu.ac.uk/study/accommodation/halls-of-residence/index.aspx"]
+ "patterns": ["How to book an accomodation ?", "when can i book accomodation","accomodation help", "find me an accomodation"],
+ "responses": ["Please refer to FAQs to find the answer to your query https://www.dmu.ac.uk/study/accommodation/faqs.aspx or simply drop accomodatio office an email accommodation@dmu.ac.uk", "here is the list of university accomodation https://www.dmu.ac.uk/study/accommodation/halls-of-residence/index.aspx"]
 }
 ]
 }
