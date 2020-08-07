@@ -43,8 +43,8 @@
  "patterns": ["how can i get student loan", "how do i get student finance","Who deals with funding courses and student loans"],
  "responses": ["student finance welfare team can be reached on +44 (0)116 2577595 between monday to Friday 10 am and 4pm", "email student finance welfare team sas@dmu.ac.uk","to get information regarding student finance drop us an email sas@dmu.ac.uk or ring 0116 2577595"]
 },
- {"tag": "Accomodation",
- "patterns": ["How to book an accomodation ?", "when can i book accomodation","accomodation help", "find me an accomodation"],
+ {"tag": "Accommodation",
+ "patterns": ["How to book an accommodation ?", "when can i book accommodation","accommodation help", "find me an accommodation", "what accommodations are available"],
  "responses": ["Please refer to FAQs to find the answer to your query https://www.dmu.ac.uk/study/accommodation/faqs.aspx or simply drop accomodatio office an email accommodation@dmu.ac.uk", "here is the list of university accomodation https://www.dmu.ac.uk/study/accommodation/halls-of-residence/index.aspx"]
 }
 ]
